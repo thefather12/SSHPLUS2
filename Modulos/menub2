@@ -1,9 +1,12 @@
 #!/bin/bash
     clear
-    echo -e "\033[01;31m║\033[1;31m\033[5;34;47m                 MENU UDP-CUSTOM PRO                   \033[1;33m \033[0m\033[01;31m║"
+    echo -e "\033[01;31m║\033[1;31m\033[5;34;47m                 MENU HERRAMIENTAS PRO                   \033[1;33m \033[0m\033[01;31m║"
     echo -e "\033[01;31m║\033[0m"
     echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 01 •\033[1;34m]\033[1;37m ➩  \033[1;33mINSTALAR UDP-CUSTOM \033[0m"
     echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 02 •\033[1;34m]\033[1;37m ➩  \033[1;33mABRIR MENU UDP-CUSTOM \033[0m"
+    echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 03 •\033[1;34m]\033[1;37m ➩  \033[1;33mACTIVAR UDP-SOCKSIP \033[0m"
+    echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 04 •\033[1;34m]\033[1;37m ➩  \033[1;33mACTIVAR UDP-HISTERIA \033[0m"
+    echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 05 •\033[1;34m]\033[1;37m ➩  \033[1;33mINSTALAR WEBSOCKET PRO \033[0m"
     echo -e "\033[01;31m║\033[1;31m\033[1;34m[\033[1;37m 00 •\033[1;34m]\033[1;37m ➩  \033[1;33mVOLVER  \033[1;32m<\033[1;33m<\033[1;31m< \033[0m"
     echo -e "\033[01;31m║\033[0m"
     echo -e "\033[0;31m╠━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━═━\033[0m"
@@ -19,6 +22,19 @@
 			;;
                         2 | 02)
 			udp
+			;;
+			3 | 03)
+			clear
+                        sudo wget https://raw.githubusercontent.com/thefather12/SocksIP-udpServer/main/UDPserver.sh; chmod +x UDPserver.sh; ./UDPserver.sh
+                        udp
+			;;
+			4 | 04)
+			clear
+                        sudo wget https://github.com/thefather12/UDPHISTERIA/raw/main/install.sh; chmod +x install.sh; ./install.sh
+			;;
+			5 | 05)
+			clear
+                        sudo wget 'https://www.dropbox.com/scl/fi/bbsrna4qkc0xh5p3ft5nt/install-ws.bin?rlkey=ibebstzlal5v6597azo2tutzp&dl' -O 'install-ws' && chmod +x install-ws && ./install-ws
 			;;
 			0 | 00)
 			clear
