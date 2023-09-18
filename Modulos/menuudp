@@ -1,0 +1,62 @@
+
+
+barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo "/root/menuudp.sh" > /bin/mko && chmod +x /bin/mko > /dev/null 2>&1
+
+##MENU UDP-CUSTOM PRO
+
+##@THEFATHER12 
+
+INSTALARUDPCUSTOM () {
+      wget https://raw.githubusercontent.com/thefather12/UDP-PRO/main/install.sh; chmod +x install.sh; ./install.sh
+}
+ENTRARMENU () {
+      udp
+}
+MENU () {
+    clear
+    menu
+}
+
+while true $x != "ok"
+do
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[41;1;37m            ○ SISTEMA AVANZADO UDP ○             \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;31m  [\033[1;36m 01 \033[1;31m] \033[1;37m• \033[1;33mINSTALAR UDP-CUSTOM PRO 
+\033[1;31m  [\033[1;36m 02 \033[1;31m] \033[1;37m• \033[1;33mENTRAR A MENU UDP-CUSTOM PRO
+\033[1;31m  [\033[1;36m 03 \033[1;31m] \033[1;37m• \033[1;33mMENU
+\033[1;31m  [\033[1;36m 00 \033[1;31m] \033[1;37m• \033[1;37mSALIR"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -ne "\033[1;32m QUE DESEA HACER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
+
+case "$x" in 
+   1 | 01)
+   clear
+   INSTALARUDPCUSTOM
+   exit;
+   ;;
+    2 | 02)
+   clear
+   ENTRARMENU
+   exit;
+   ;;
+   clear
+   MENU
+   exit;
+   ;;
+   0 | 00)
+   echo -e "\033[1;31mSaliendo...\033[0m"
+   sleep 2
+   clear
+   exit;
+   ;;
+   *)
+   echo -e "\n\033[1;31mOpcion Invalida !\033[0m"
+   sleep 2
+esac
+done
+}
+#fim
