@@ -91,7 +91,7 @@ _terminate(){
     wget https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Install/versao >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Modulos/v2raymanager >/dev/null 2>&1
-    wget https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Modulos/botteste.sh >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Modulos/botteste.sh >/dev/null 2>&1
     chmod 777 v2raymanager >/dev/null 2>&1
     chmod 777 botteste.sh >/dev/null 2>&1
     [[ -d $HOME/BOT ]] || mkdir $HOME/BOT 
@@ -215,7 +215,7 @@ install_fim () {
     echo ""
     echo -e "          \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mACTUALIZANDO SISTEMA \033[1;33m[\033[1;31m!\033[1;33m]\033[0m"
     echo ""
-    echo -e "    \033[1;33mACTUALIZACIONES DEMORAN UNOS INSTANTES SEA PACIENTE 🕛🕧!  \033[0m"
+    echo -e "    \033[1;33mACTUALIZACIONES DEMORAN UNOS INSTANTES SEA PACIENTE 🕛🕧! \033[0m"
     echo ""
     fun_attlist() {
         apt-get update -y
@@ -259,7 +259,7 @@ install_fim () {
     clear
     echo ""
     cd $HOME
-    echo -e "        \033[1;33m • \033[1;32mINSTALACION TERMINADA 😃  \033[1;33m • \033[0m"
+    echo -e "        \033[1;33m • \033[1;32mINSTALACION TERMINADA 😃 \033[1;33m • \033[0m"
     echo ""
     cd $HOME
     echo "clear" >>/root/.bashrc
@@ -422,11 +422,11 @@ echo ""
 echo ""
 echo -e "                       \033[05;31mSISTEMAS \033[05;33mCOMPATIBLES\033[0m"| lolcat
 echo ""
-echo -e "\033[1;31m• \033[1;33mUBUNTU 18 x64\033[0m 🐧"| lolcat
-echo -e "\033[1;31m• \033[1;33mUBUNTU 20 x64\033[0m 🐧"| lolcat
-echo -e "\033[1;31m• \033[1;33mDEBIAN  9 x64\033[0m 🐧"| lolcat
-echo -e "\033[1;31m• \033[1;33mDEBIAN 10 x64\033[0m 🐧"| lolcat
-echo -e "\033[1;31m• \033[1;33mDEBIAN 11 x64\033[0m 🐧"| lolcat
+echo -e "\033[1;31m• \033[1;33mUBUNTU 18 x64\033[0m 🐧 "| lolcat
+echo -e "\033[1;31m• \033[1;33mUBUNTU 20 x64\033[0m 🐧 "| lolcat
+echo -e "\033[1;31m• \033[1;33mDEBIAN  9 x64\033[0m 🐧 "| lolcat
+echo -e "\033[1;31m• \033[1;33mDEBIAN 10 x64\033[0m 🐧 "| lolcat
+echo -e "\033[1;31m• \033[1;33mDEBIAN 11 x64\033[0m 🐧 "| lolcat
 echo -e "\033[1;31m \033[1;33m\033[0m"
 echo -e "\033[1;31m• \033[1;33mUSE UBUNTU 18 x64 PARA UNA MEJOR EXPERIENCIA\033[0m"| lolcat
 echo -e "\033[1;31m• \033[1;33mUSE UBUNTU 18 x64 PARA (V2RAY) EVITE OTROS SISTEMAS\033[0m"| lolcat
