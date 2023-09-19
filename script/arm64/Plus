@@ -215,7 +215,7 @@ install_fim () {
     echo ""
     echo -e "          \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mACTUALIZANDO SISTEMA \033[1;33m[\033[1;31m!\033[1;33m]\033[0m"
     echo ""
-    echo -e "    \033[1;33mACTUALIZACIONES DEMORAN UNOS INSTANTES SEA PACIENTE 🕛🕧!\033[0m"
+    echo -e "    \033[1;33mACTUALIZACIONES DEMORAN UNOS INSTANTES SEA PACIENTE 🕛🕧!  \033[0m"
     echo ""
     fun_attlist() {
         apt-get update -y
@@ -259,7 +259,7 @@ install_fim () {
     clear
     echo ""
     cd $HOME
-    echo -e "        \033[1;33m • \033[1;32mINSTALACION TERMINADA 😃\033[1;33m • \033[0m"
+    echo -e "        \033[1;33m • \033[1;32mINSTALACION TERMINADA 😃  \033[1;33m • \033[0m"
     echo ""
     cd $HOME
     echo "clear" >>/root/.bashrc
