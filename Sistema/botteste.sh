@@ -13,7 +13,7 @@
     wget https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Sistema/botssh >/dev/null 2>&1
     chmod 777 botssh
     echo ""
-    sleep 1
+    sleep 4
     screen -dmS bot_teste ./botssh $token > /dev/null 2>&1
     clear
     echo "BOT ACTIVADO"
