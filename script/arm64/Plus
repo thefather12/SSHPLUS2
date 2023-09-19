@@ -88,14 +88,14 @@ exit 1
 _terminate(){
     echo "/bin/menu" >/bin/h && chmod +x /bin/h >/dev/null 2>&1
     rm versao* >/dev/null 2>&1
-    wget https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Install/versao >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Install/versao >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
-    wget https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Modulos/v2raymanager >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Modulos/v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Modulos/botteste.sh >/dev/null 2>&1
     chmod 777 v2raymanager >/dev/null 2>&1
     chmod 777 botteste.sh >/dev/null 2>&1
     [[ -d $HOME/BOT ]] || mkdir $HOME/BOT 
-    [[ -d $HOME/BOT ]] && wget -q -O $HOME/BOT/ShellBot.sh https://raw.githubusercontent.com/thefather12/SSHPLUS2/main/Modulos/ShellBot.sh
+    [[ -d $HOME/BOT ]] && wget -q -O $HOME/BOT/ShellBot.sh https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Modulos/ShellBot.sh
     chmod 777 $HOME/BOT/ShellBot.sh
     [[ -d /etc/rec ]] || mkdir /etc/rec
     wget -q -O /etc/rec/licence https://raw.githubusercontent.com/upalfadate/hdisbsi/main/Modulos/licence
