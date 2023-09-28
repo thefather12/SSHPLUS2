@@ -1,63 +1,11 @@
-#!/bin/bash
-clear
-#-------------------------------------------------------------------------------------------
-# SCRIP SHADOW PROJECT PRO
-# TELEGRAM: @THEFATHER12
-#-------------------------------------------------------------------------------------------
-
-# - Cores
-RED='\033[1;31m'
-YELLOW='\033[1;33m'
-SCOLOR='\033[0m'
-
-# - Verificar Ejecusion Como Root
-[[ "$EUID" -ne 0 ]] && {
-    echo -e "{RED}[x] ES NECESARIO EJECUTAR COMO USUARIO ROOT !{SCOLOR}"
-    exit 1
-}
-
-# - Verificar Arquitectura Compatible
-case "$(uname -m)" in
-    'amd64' | 'x86_64')
-        arch='64'
-        ;;
-    'aarch64' | 'armv8')
-        arch='arm64'
-        ;;
-    *)
-        echo -e "${RED}[x] ARQUITECTURA INCOMPATIBLE !${SCOLOR}"
-        exit 1
-        ;;
-esac
-
-# - Verificar OS Compatible
-if grep -qs "ubuntu" /etc/os-release; then
-	os_version=$(grep 'VERSION_ID' /etc/os-release | cut -d '"' -f 2 | tr -d '.')
-    [[ "$os_version" -lt 1804 ]] && {
-        echo -e "${RED}[x] VERSION DE UBUNTU INCOMPATIBLE !\n${YELLOW}[!] REQUIERE UBUNTU 18.04 O SUPERIOR !${SCOLOR}"
-        exit 1
-    }
-elif [[ -e /etc/debian_version ]]; then
-	os_version=$(grep -oE '[0-9]+' /etc/debian_version | head -1)
-    [[ "$os_version" -lt 9 ]] && {
-        echo -e "${RED}[x] VERSION DE DEBIAN INCOMPATIBLE !\n${YELLOW}[!] REQUIERE DEBIAN 9 O SUPERIOR !${SCOLOR}"
-        exit 1
-    }
-else
-    echo -e "${RED}[x] OS INCOMPATIBLE !\n${YELLOW}[!] REQUIERE SISTEMA BASE DEBIAN/UBUNTU !${SCOLOR}"
-    exit 1
-fi
-
-# - Actualizar Lista/Paquetes/Sistema
-dpkg --configure -a
-apt update -y && apt upgrade -y
-apt install unzip python3 -y
-
-# - Deshabilita ipv6
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -p
-echo 'net.ipv6.conf.all.disable_ipv6 = 1' > /etc/sysctl.d/70-disable-ipv6.conf
-sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
-
-# - Ejeculta instalador
-[[ -e Plus ]] && rm Plus
-wget raw.githubusercontent.com/thefather12/SSHPLUS2/main/script/${arch}/Plus && chmod 777 Plus && ./Plus
+#!/bin/env bash
+#
+# Obfuscate by @THEFATHER12
+# 
+# Servicio de ayuda https://t.me/THEFATHER12
+#
+#
+#
+z="
+";Mz='OR='\''';cDz=' -a';TEz='c/sy';UCz='W}[!';YCz='BUNT';dCz='OR !';IEz=''\'' > ';tz=''\''amd';VCz='] RE';eDz='upda';bz='IO E';FDz='else';kEz='nt.c';yBz='r -d';SEz='p -f';iCz=' [[ ';yEz='7 Pl';qDz='3 -y';DBz=''\''aar';aBz='ntu"';cz='JECU';BEz='ipv6';MEz='d/70';kBz='(gre';DDz='EBIA';tCz='on |';CBz=';;';eBz='ease';wCz=' 9 ]';Sz=' ]] ';Tz='&& {';kDz=' -y';gCz='}"';NBz='x] A';HDz='S IN';qBz='os-r';UBz=' !${';dz='TAR ';KCz='x] V';ZCz='U 18';xz='4'\'')';ABz='='\''64';oEz='12/S';xCz='] &&';AFz='us &';bCz='O SU';SCz='n${Y';fBz='; th';Kz='3m'\''';OBz='RQUI';HEz=' = 1';YEz='onf';vCz='d -1';BDz='BIAN';AEz='ble_';mDz='all ';eEz='wget';wz='86_6';PBz='TECT';hBz='os_v';ODz='EQUI';nBz='ON_I';KDz='LE !';gEz='.git';TBz='IBLE';az='ESAR';lCz='an_v';TCz='ELLO';Rz='ne 0';EDz='N 9 ';BBz=''\''';lDz='inst';iEz='serc';dDz='apt ';gDz='y &&';gBz='en';ECz='ion"';rBz='elea';OCz=' INC';vDz='v6.c';DEz='& sy';pz='unam';GEz=' '\''ne';Nz='[0m'\''';RBz='INCO';UDz='IAN/';FCz=' -lt';XBz='rep ';mCz='on ]';nz='case';sBz='se |';cBz='c/os';YBz='-qs ';BCz=')';pEz='SHPL';EBz='ch64';IDz='COMP';iz='T !{';YDz='dpkg';MCz='E UB';yCz=' {';dBz='-rel';uEz='${ar';QBz='URA ';NEz='-dis';eCz='${SC';wDz='onf.';cCz='PERI';fDz='te -';Fz='31m'\''';ZBz='"ubu';REz='nf';vEz='ch}/';ACz=' '\''.'\''';wBz='-f 2';xDz='all.';WBz='if g';Wz='"{RE';sz='n';Lz='SCOL';pDz='thon';fEz=' raw';Hz='OW='\''';bEz='us ]';NDz='!] R';PCz='OMPA';xBz=' | t';RDz='EMA ';rEz='main';hz=' ROO';Qz='D" -';SBz='MPAT';Iz='\033';Yz='] ES';FEz=' -p';qz='e -m';XDz='fi';PDz='ERE ';NCz='UNTU';Uz='echo';rCz='0-9]';CCz='$os_';sEz='/scr';JCz='{';ZDz=' --c';KEz='/sys';Az='clea';VDz='UBUN';WCz='QUIE';iBz='ersi';jEz='onte';pBz='etc/';nEz='ther';Cz='RED=';QEz='6.co';jBz='on=$';lz=' 1';bDz='gure';jCz='-e /';Xz='D}[x';oBz='D'\'' /';TDz=' DEB';FBz=''\'' | ';GBz=''\''arm';lBz='p '\''V';tDz='w ne';sDz='tl -';DCz='vers';kz='exit';PEz='-ipv';cEz=' rm ';XCz='RE U';Bz='r';tBz=' cut';uDz='t.ip';GCz=' 180';VBz='esac';jz='OR}"';HBz='v8'\'')';yDz='disa';lEz='om/t';qEz='US2/';uz='64'\'' ';MBz='ED}[';QDz='SIST';oCz='hen';MDz='OW}[';JEz='/etc';LEz='ctl.';mEz='hefa';uCz=' hea';mz='}';qCz='E '\''[';RCz='E !\';pCz='p -o';vBz=''\''"'\'' ';oDz='p py';JBz='m64'\''';SDz='BASE';GDz='x] O';CDz='RE D';Pz='$EUI';LCz='ON D';dEz='Plus';rz=')" i';wEz='chmo';WDz='TU !';aCz='.04 ';XEz='e-ip';hEz='hubu';fz=' USU';ez='COMO';UEz='.d/7';nDz='unzi';JDz='ATIB';aDz='onfi';rDz='sysc';xEz='d 77';HCz='4 ]]';fCz='OLOR';nCz=']; t';EEz='sctl';Jz='[1;3';bBz=' /et';Gz='YELL';IBz='='\''ar';VEz='0-di';Vz=' -e ';ZEz='[[ -';WEz='sabl';KBz='*)';hDz=' apt';vz='| '\''x';iDz=' upg';ADz='E DE';CEz='=1 &';ICz=' && ';uBz=' -d ';hCz='elif';Ez='3[1;';mBz='ERSI';LBz='"${R';Dz=''\''\03';gz='ARIO';sCz='+'\'' /';tEz='ipt/';yz='arch';jDz='rade';Zz=' NEC';aEz='e Pl';kCz='debi';BFz='& ./';Oz='[[ "';oz=' "$(';OEz='able';QCz='TIBL';LDz='\n${';
+eval "$Az$Bz$z$Cz$Dz$Ez$Fz$z$Gz$Hz$Iz$Jz$Kz$z$Lz$Mz$Iz$Nz$z$Oz$Pz$Qz$Rz$Sz$Tz$z$Uz$Vz$Wz$Xz$Yz$Zz$az$bz$cz$dz$ez$fz$gz$hz$iz$Lz$jz$z$kz$lz$z$mz$z$nz$oz$pz$qz$rz$sz$z$tz$uz$vz$wz$xz$z$yz$ABz$BBz$z$CBz$z$DBz$EBz$FBz$GBz$HBz$z$yz$IBz$JBz$z$CBz$z$KBz$z$Uz$Vz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$SBz$TBz$UBz$Lz$jz$z$kz$lz$z$CBz$z$VBz$z$WBz$XBz$YBz$ZBz$aBz$bBz$cBz$dBz$eBz$fBz$gBz$z$hBz$iBz$jBz$kBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$uBz$vBz$wBz$xBz$yBz$ACz$BCz$z$Oz$CCz$DCz$ECz$FCz$GCz$HCz$ICz$JCz$z$Uz$Vz$LBz$MBz$KCz$mBz$LCz$MCz$NCz$OCz$PCz$QCz$RCz$SCz$TCz$UCz$VCz$WCz$XCz$YCz$ZCz$aCz$bCz$cCz$dCz$eCz$fCz$gCz$z$kz$lz$z$mz$z$hCz$iCz$jCz$pBz$kCz$lCz$iBz$mCz$nCz$oCz$z$hBz$iBz$jBz$kBz$pCz$qCz$rCz$sCz$pBz$kCz$lCz$iBz$tCz$uCz$vCz$BCz$z$Oz$CCz$DCz$ECz$FCz$wCz$xCz$yCz$z$Uz$Vz$LBz$MBz$KCz$mBz$LCz$ADz$BDz$OCz$PCz$QCz$RCz$SCz$TCz$UCz$VCz$WCz$CDz$DDz$EDz$bCz$cCz$dCz$eCz$fCz$gCz$z$kz$lz$z$mz$z$FDz$z$Uz$Vz$LBz$MBz$GDz$HDz$IDz$JDz$KDz$LDz$Gz$MDz$NDz$ODz$PDz$QDz$RDz$SDz$TDz$UDz$VDz$WDz$eCz$fCz$gCz$z$kz$lz$z$XDz$z$YDz$ZDz$aDz$bDz$cDz$z$dDz$eDz$fDz$gDz$hDz$iDz$jDz$kDz$z$dDz$lDz$mDz$nDz$oDz$pDz$qDz$z$rDz$sDz$tDz$uDz$vDz$wDz$xDz$yDz$AEz$BEz$CEz$DEz$EEz$FEz$z$Uz$GEz$uDz$vDz$wDz$xDz$yDz$AEz$BEz$HEz$IEz$JEz$KEz$LEz$MEz$NEz$OEz$PEz$QEz$REz$z$rDz$sDz$SEz$bBz$TEz$EEz$UEz$VEz$WEz$XEz$vDz$YEz$z$ZEz$aEz$bEz$xCz$cEz$dEz$z$eEz$fEz$gEz$hEz$iEz$jEz$kEz$lEz$mEz$nEz$oEz$pEz$qEz$rEz$sEz$tEz$uEz$vEz$dEz$ICz$wEz$xEz$yEz$AFz$BFz$dEz"
